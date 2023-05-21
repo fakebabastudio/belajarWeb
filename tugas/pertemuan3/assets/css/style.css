@@ -1,0 +1,376 @@
+@font-face {
+    font-family: poppins;
+    src: url("../font/Poppins-Medium.ttf");
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins, Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    width: 100%;
+    height: 630px;
+    background: url("../image/bg-image-hero.png");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.nav {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    padding-block: 20px;
+}
+
+.logo {
+    font-size: 30px;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.menu ul {
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu .active {
+    border-bottom: 2px solid white;
+}
+
+.hero {
+    width: 70%;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.hero h1.logo {
+    font-size: 40px;
+}
+
+.hero p {
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+    font-size: 20px;
+}
+
+.hero button {
+    background: white;
+    border: 1px solid #0099FF;
+    padding: 7px 15px;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+    color: #0099ff;
+    margin-bottom: 10px;
+}
+
+/* ====================== Pricing =============================== */
+
+#content {
+    margin-top: 120px;
+}
+
+#pricing {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#pricing h2,
+#services h2,
+#contact h2 {
+    color: #044581;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+
+#pricing p,
+#services p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#pricing .listPricing {
+    width: 70%;
+    margin: 50px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pricing .itemListPricing {
+    width: 30%;
+    box-shadow: -1px 1px 13px 2px #888888;
+    border-radius: 1.5rem;
+}
+
+.itemListPricing .headList {
+    height: 80px;
+    width: 100%;
+    background: url(../image/Rectangle\ 7.png) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 30px;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.itemListPricing .headList h3 {
+    font-size: 30px;
+    color: white;
+    letter-spacing: 7px;
+}
+
+#pricing .price {
+    font-size: 30px;
+    margin: 30px 0;
+}
+
+#pricing ul {
+    height: 250px;
+}
+
+#pricing ul li {
+    list-style: none;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+#pricing .btn {
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    border: none;
+    background: white;
+    border-radius: 0.7rem;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+#pricing .btnGradasi {
+    background: linear-gradient(to right, #0199FF, #4DCAFB);
+    color: white;
+}
+
+.itemListPricing.std .headList {
+    background: url(../image/Rectangle\ 8.png) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.itemListPricing.std {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background: linear-gradient(to bottom, #298CFF, #5AD8FF);
+}
+
+.itemListPricing.std h3 {
+    color: #0099FF;
+}
+
+.itemListPricing.std .btn {
+    color: #0099FF;
+}
+
+/* =============== service ================== */
+
+#services {
+    margin: 100px 0;
+    text-align: center;
+}
+
+#services .listServices {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.listServices .itemServices {
+    width: 25%;
+    padding: 25px;
+    border-radius: 1rem;
+    box-shadow: -1px 1px 13px 2px #888888;
+}
+
+.listServices .itemServices h4 {
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* ================ contact =================== */
+
+#contact {
+    margin: 70px 0;
+    width: 100%;
+    text-align: center;
+    background: url("../image/bgContact.png") no-repeat;
+    background-size: cover;
+    padding-top: 40px;
+}
+
+#contact h2 {
+    color: white;
+}
+
+#contact .boxContact {
+    margin: 60px auto 0;
+    width: 70%;
+    height: 600px;
+}
+
+#contact .information {
+    width: 30%;
+    padding: 30px;
+    background: #00548C;
+    border-radius: 1.5rem;
+    color: white;
+    text-align: left;
+    z-index: 99;
+    position: relative;
+    top: 90px;
+}
+
+.information h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.information .secInformation {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+.sosmed {
+    display: flex;
+    gap: 30px;
+}
+
+#contact .formContact {
+    margin-left: 20%;
+    width: 80%;
+    background: white;
+    border-radius: 1.5rem;
+    padding: 70px 20px 70px 21%;
+    text-align: left;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 290px;
+    z-index: 1;
+}
+
+.formContact h3 {
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.formContact form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.formContact .formInput {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #227AFF;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.formContact .formInput input,
+.formContact .formInput textarea {
+    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid #227AFF;
+    outline-style: none;
+}
+
+.formContact .formInput.msg {
+    width: 100%;
+}
+
+.formContact button {
+    background: #1472FF;
+    color: white;
+    letter-spacing: 2px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+}
+
+/* ================= about ================== */
+
+#about {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#about .logo p {
+    color: black;
+    font-size: 28px;
+}
+
+#about .desc {
+    width: 25%;
+}
+
+#about .desc h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#about .sosmed img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* ======================== footer ============================ */
+
+#footer {
+    width: 100%;
+    background: #4DAAE9;
+    padding: 25px 0;
+    color: white;
+}
+
+#footer .boxFooter {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer .boxFooter .text {
+    display: flex;
+    gap: 30px;
+}
