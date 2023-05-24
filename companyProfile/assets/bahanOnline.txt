@@ -1,0 +1,22 @@
+bgContact = https://i.ibb.co/mtztKgy/bg-Contact.png
+bgImageHero = https://i.ibb.co/fFhWRfK/bg-image-hero.png
+blackFacebook = https://i.ibb.co/d4BZ4BG/Black-Facebook.png
+blackInstagram = https://i.ibb.co/pLBM07M/Black-Instagram.png
+blackTwitter = https://i.ibb.co/SPMtqfh/Black-Twitter.png 
+call = https://i.ibb.co/YcW3Qs9/call.png
+group3 = https://i.ibb.co/Ksjt8C8/Group-3.png
+icon1 = https://i.ibb.co/0h9RLjR/Icon1.png
+icon2 = https://i.ibb.co/jZPS99f/Icon2.png
+icon3 = https://i.ibb.co/GRhBFXj/Icon3.png
+icon4 = https://i.ibb.co/f0M4y2k/Icon4.png
+icon5 = https://i.ibb.co/DgfxqCb/Icon5.png
+message = https://i.ibb.co/W67kZbq/messages.png
+pin-icon = https://i.ibb.co/9Wh2Qx2/pin-icon.png
+rectangle7 = https://i.ibb.co/MgfQc1m/Rectangle-7.png
+rectangle8 = https://i.ibb.co/s1FtkXm/Rectangle-8.png
+whiteFacebook = https://i.ibb.co/HYbcZxk/White-Facebook.png
+whiteInstagram = https://i.ibb.co/phTCKrj/White-Instagram.png
+whiteTwitter = https://i.ibb.co/zhsXDrW/White-Twitter.png
+
+Font poppins medium
+https://filebin.net/7au7m6mlsw2uhwi5/Poppins-Medium.ttf
