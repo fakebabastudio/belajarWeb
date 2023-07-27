@@ -3,7 +3,7 @@
 
 Html adalah adkakdnakdnakndkan akdnaknd kadkna kdna kndakndkan dknakdnakndakndaknakdanakn dak
 
-...html
+...tsx
 <!DOCTYPE html>
 <html lang="en">
 <head>
