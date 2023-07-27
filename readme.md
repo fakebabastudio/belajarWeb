@@ -7,19 +7,20 @@ Pada Materi ini kita akan membahas bagaimana membuat fitur lupa password. Pada f
 *Langkah 1*
 
 Petama kita akan instalasi package nodemailer untuk mengirimkan email pada nodejs.
-tsx
+```tsx
 npm install --save @nestjs-modules/mailer nodemailer
 npm install --save-dev @types/nodemailer
 npm install --save handlebars   // library JavaScript yang digunakan untuk memfasilitasi proses templating di sisi klien. Dengan menggunakan Handlebars.js, Anda dapat menggabungkan data dengan template HTML untuk menghasilkan output HTML yang lebih dinamis dan fleksibel
+```
 
  
 
 Kemudian kita buat feature mail
 
-tsx
+```tsx
 npx nest module app/mail
 npx nest service app/mail
-
+```
 
 *Langkah 2* 
 Buatlah akun pada https://mailtrap.io/ untuk membuat smtp server dummy. 
@@ -33,7 +34,7 @@ Kemudian buka My Inbox dan pada bagian integrations pilih nodemailer
 
 ![Alt text](https://drive.google.com/uc?id=1MYJcgHoMaRhyqJ0nhMnfFR1MhgYmhwZK)
 
-tsx
+```tsx
 var transport = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
@@ -42,7 +43,7 @@ var transport = nodemailer.createTransport({
     pass: "0a66404****"
   }
 })
-
+```
 
 Pada kode di atas kita akan mendapatkan konfigurasi untuk nanti simpan di nestjs. Terlihat pada bagian pass ada *** untuk mendapatkan string lengkap nya silahkan kalian klik button copy di sebelah kanan.
 
@@ -51,7 +52,7 @@ Konfigurasi mail module
 
 *mail.module.ts*
 
-tsx
+```tsx
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { Module } from '@nestjs/common';
@@ -85,7 +86,7 @@ import { join } from 'path';
   exports: [MailService], // 👈 export  mailService agar bisa digunakan di luar module mail
 })
 export class MailModule {}
-
+```
 
 
 *Langkah 4*
@@ -96,13 +97,13 @@ Membuat folder template pada mail
 
 *lupa_password.hbs*
 
-tsx
+```tsx
 <p>Hey {{ name }},</p>
 <p>Please click below to confirm your email</p>
 <p>
     <a  href="{{ link }}">Klik</a>
 </p>
-
+```
 
 
 Secara default NestJs hanya mendistibuskan mengcompile file .js dan .ts pada saat build. kita lihat bahwa template menggukaan extensi .hbs. Maka kita harus tambahkan konfiguasi pada nest-cli.json  agar nestjs dapat mendistibusikan .hbs.
@@ -111,17 +112,17 @@ Secara default NestJs hanya mendistibuskan mengcompile file .js dan .ts pada saa
 
 *nest-cli.json*
 
-tsx
+```tsx
 "compilerOptions": {
     "assets": ["app/mail/templates/**/*"],
     "watchAssets": true
   },
-
+```
 
 
 Tambahkan file di atas pada mest-cli.json, sehingga menjadi
 
-tsx
+```tsx
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
@@ -131,7 +132,7 @@ tsx
   },
   "sourceRoot": "src"
 }
-
+```
 
 
 *Langkah 5*
@@ -140,17 +141,17 @@ Membuat DTO MailResetPassword dan membuat method pada mail service
 
 *mail.dto.ts*
 
-tsx
+```tsx
 export class MailResetPasswordDto {
   link: string;
   name: string;
   email: string;
 }
-
+```
 
 *mail.service.ts*
 
-tsx
+```tsx
 import { Injectable } from '@nestjs/common';
 import { MailerService } from '@nestjs-modules/mailer'; //import MailerService
 import { MailResetPasswordDto } from './mail.dto';
@@ -171,7 +172,7 @@ export class MailService {
     });
   }
 }
-
+```
 
 
 *Langkah 6*
@@ -180,7 +181,7 @@ import mailModule pada auth module
 
 *auth.module.ts*
 
-tsx
+```tsx
 import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
@@ -213,7 +214,7 @@ import { ResetPassword } from './reset_password.entity';
   providers: [AuthService, JwtStrategy],
 })
 export class AuthModule {}
-
+```
 
 
 *Langkah 7* 
@@ -223,7 +224,7 @@ Kemudian kita akan membuat tabel reset_password untuk menyimpan user_id dan toke
 Buatlah file reset_password.entity.ts pada folder Auth
 
 *reset_password.entity.ts*
-tsx
+```tsx
 import {
   Entity,
   BaseEntity,
@@ -252,12 +253,12 @@ export class ResetPassword extends BaseEntity {
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 }
-
+```
 
 
 Karena ada relasi dengan tabel user, maka kita akan update pada file auth.entity.ts
 
-tsx
+```tsx
 import {
   Entity,
   BaseEntity,
@@ -301,7 +302,7 @@ export class User extends BaseEntity {
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 }
-
+```
 
 
 *Langkah  8*
@@ -310,7 +311,7 @@ Buatlah method forgotPassword pada auth service
 
 *auth.service.ts*
 
-tsx
+```tsx
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 ...
 import { MailService } from '../mail/mail.service'; // import mail service
@@ -361,20 +362,20 @@ export class AuthService extends BaseResponse {
     return this._success('Silahkan Cek Email');
   }
 }
-
+```
 
 
 *Langkah 9*
 
 Membuat endpoint reset password pada auth controller
 
-tsx
+```tsx
 @Post('lupa-password')
   async forgotPassowrd(@Body('email') email: string) {
     console.log('email', email);
     return this.authService.forgotPassword(email);
   }
-
+```
 
 
 *Langkah 10*
