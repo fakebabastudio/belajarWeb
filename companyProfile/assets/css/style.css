@@ -1,18 +1,14 @@
-@font-face {
-    font-family: poppins;
-    src: url("https://filebin.net/7au7m6mlsw2uhwi5/Poppins-Medium.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 * {
     margin: 0px;
     padding: 0px;
-    font-family: poppins, Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
-
 
 #header {
     width: 100%;
@@ -52,7 +48,8 @@ html {
     font-size: 20px;
 }
 
-.menu .active {
+.menu a:hover {
+    color: blue;
     border-bottom: 2px solid white;
 }
 
@@ -68,22 +65,23 @@ html {
 
 .hero p {
     width: 50%;
-    margin: 10px auto;
+    margin: 30px auto;
     color: white;
     font-size: 20px;
 }
 
 .hero button {
-    background: white;
     border: 1px solid #0099FF;
     padding: 7px 15px;
     border-radius: 1rem;
     letter-spacing: 2px;
-    color: #0099ff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-/* =========================== Pricing ============================== */
+.btnWhite {
+    background: white;
+    color: #0099ff;
+}
 
 #content {
     margin-top: 120px;
@@ -94,16 +92,13 @@ html {
     margin-bottom: 30px;
 }
 
-#pricing h2,
-#services h2,
-#contact h2 {
+.judul {
     color: #044581;
     letter-spacing: 2px;
     font-size: 30px;
 }
 
-#pricing p,
-#services p {
+.deskripsi {
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -153,17 +148,16 @@ html {
     margin-bottom: 20px;
 }
 
-#pricing .btn {
+#pricing button {
     letter-spacing: 2px;
     padding: 5px 10px;
     border: none;
-    background: white;
     border-radius: 0.7rem;
     margin-bottom: 30px;
     font-size: 18px;
 }
 
-#pricing .btnGradasi {
+.btnGradasi {
     background: linear-gradient(to right, #0199FF, #4DCAFB);
     color: white;
 }
@@ -180,12 +174,9 @@ html {
     background: linear-gradient(to bottom, #298CFF, #5AD8FF);
 }
 
-.itemListPricing.std h3,
-.itemListPricing.std .btn {
-    color: #0099FF;
+.txt-blue {
+    color: #0099FF !important;
 }
-
-/* ========================== Services ============================= */
 
 #services {
     margin: 100px 0;
@@ -201,10 +192,15 @@ html {
     gap: 30px;
 }
 
+.listServices .itemServices img {
+    height: 100px;
+}
+
 .listServices .itemServices {
     width: 25%;
     padding: 25px;
     border-radius: 1rem;
+    background-color: white;
     box-shadow: -1px 1px 13px 2px #888888;
 }
 
@@ -214,7 +210,9 @@ html {
     margin-bottom: 10px;
 }
 
-/* ======================== Contact ===================================== */
+.listServices .itemServices:hover {
+    background-color: #f5f5f5;
+}
 
 #contact {
     margin: 70px 0;
@@ -242,7 +240,7 @@ html {
     border-radius: 1.5rem;
     color: white;
     text-align: left;
-    z-index: 99;
+    z-index: 1;
     position: relative;
     top: 90px;
 }
@@ -276,7 +274,7 @@ html {
     box-sizing: border-box;
     position: relative;
     bottom: 290px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .formContact h3 {
@@ -304,7 +302,7 @@ html {
 .formContact .formInput textarea {
     padding-left: 5px;
     border: none;
-    border-bottom: 1px solid #227AFF;
+    border-bottom: 2px solid #227AFF;
     outline-style: none;
 }
 
@@ -320,8 +318,6 @@ html {
     padding: 10px 20px;
     border-radius: 0.5rem;
 }
-
-/* =========================== about ========================== */
 
 #about {
     width: 70%;
@@ -346,12 +342,9 @@ html {
     margin-bottom: 10px;
 }
 
-#about .sosmed img {
-    width: 40px;
-    height: 40px;
+#about .desc p {
+    text-align: justify;
 }
-
-/* ========================= Footer ============================= */
 
 #footer {
     width: 100%;
